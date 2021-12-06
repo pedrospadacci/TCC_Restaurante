@@ -56,8 +56,8 @@
         </template>
 
         <v-list>
-          <v-list-item>
-            <v-list-item-title>Administrador</v-list-item-title>
+          <v-list-item to="/login">
+            <v-list-item-title>{{ login.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
         
@@ -85,6 +85,8 @@
           { title: 'Entradas', to:'/entradas' },
           { title: 'Pizzas', to:'/pizzas' },          
         ],
+        login:{ title:'Administrador', to:'/login'},
+        model: 1,
      }),
      computed: {
        naoepaginadelogin(){
