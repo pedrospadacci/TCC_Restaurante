@@ -1,6 +1,7 @@
 <template>
 <div>
-  <v-card id="bebidas"
+  <v-card to="/bebidas"
+    id="bebidas"
     :loading="loading"
     class="mx-auto my-12"
     max-width="274"
@@ -18,7 +19,7 @@
       src="..\..\Images\Sodas.png"
     ></v-img>
 
-    <v-card-title><a href="../Home.vue">Bebidas</a></v-card-title>
+    <v-card-title>Bebidas</v-card-title>
 
     <v-card-text>
       <v-row
@@ -38,7 +39,8 @@
     
   </v-card>
 
-  <v-card id="entradas"
+  <v-card to="/entradas"
+    id="entradas"
     :loading="loading"
     class="mx-auto my-12"
     max-width="274"
@@ -129,9 +131,11 @@
 <script>
   export default {
     data: () => ({
+      produto: [],
       loading: false,
       selection: 1,
     }),
+
     
   }
 </script>

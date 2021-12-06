@@ -1,7 +1,7 @@
 <template id="telaIn">
 <div >
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer v-model="drawer" app v-if="naoepaginadelogin">
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
@@ -36,10 +36,32 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <v-app-bar app v-if="naoepaginadelogin">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Restaurante</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-menu right >
+        
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item>
+            <v-list-item-title>Administrador</v-list-item-title>
+          </v-list-item>
+        </v-list>
+        
+         </v-menu>
     </v-app-bar>
 
     <v-main>
@@ -58,11 +80,16 @@
   export default {
     data: () => ({ drawer: null,
       items: [
-          { title: 'Início', to: '/about'},
-          { title: 'Bebidas', to: '/home'},
+          { title: 'Início', to: '/inicio'},
+          { title: 'Bebidas', to: '/bebidas'},
           { title: 'Entradas', to:'/entradas' },
           { title: 'Pizzas', to:'/pizzas' },          
         ],
      }),
+     computed: {
+       naoepaginadelogin(){
+         return this.$route.name !== "Login";
+       }
+     }
   }
 </script>
