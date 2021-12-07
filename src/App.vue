@@ -1,7 +1,7 @@
 <template id="telaIn">
 <div >
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app v-if="naoepaginadelogin">
+    <v-navigation-drawer absolute bottom temporary v-model="drawer" app v-if="naoepaginadelogin">
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">

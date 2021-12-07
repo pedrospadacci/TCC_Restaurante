@@ -1,6 +1,6 @@
 module.exports = {
   devServer: {
-    proxy: 'https://cardapiotcc-backend.herokuapp.com'
+    proxy: 'cardapiotcc-backend.herokuapp.com'
   },
   transpileDependencies: [
     'vuetify'
