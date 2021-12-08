@@ -1,6 +1,6 @@
 <template>
         <div>
-            <mesas :mesas="item" v-for="item in pedido" :key="item.id" />                
+            <mesas  :mesas="item" v-for="item in pedido" :key="item.id" />                
         </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
     data: () => {
         return {
             pedido: []
+            
         }
 
     },
