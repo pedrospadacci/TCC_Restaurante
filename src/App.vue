@@ -80,7 +80,7 @@
   export default {
     data: () => ({ drawer: null,
       items: [
-          { title: 'Início', to: '/inicio'},
+          { title: 'Início', to: '/'},
           { title: 'Bebidas', to: '/bebidas'},
           { title: 'Entradas', to:'/entradas' },
           { title: 'Pizzas', to:'/pizzas' },          

@@ -16,13 +16,13 @@
                             <div class="font-weight-normal">
                                 <strong>{{ mesas.mesa.nome }}</strong>
                             </div>
-                            <div>{{ mesas.mesa.restaurante.nome }}</div>
+                            <div>{{ mesas.produto.descrocao }}</div>
                         </div>
                     </v-timeline-item>
                 </v-timeline>
                 <v-divider/>
 
-                <v-card-text class="text-h6">R${{ mesas.conta}} </v-card-text>
+                <v-card-text class="text-h6">R${{ mesas.pedido.conta}} </v-card-text>
 
                 <v-card-actions>
                     <v-btn color="error" @click="fechaConta">Fecha Conta</v-btn>
