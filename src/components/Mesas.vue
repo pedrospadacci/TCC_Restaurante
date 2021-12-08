@@ -68,7 +68,7 @@ export default {
             }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                .post('http://localhost:8080/deletaPedido/' + this.mesas.id)
+                .post('http://localhost:8080/deletaPP/' + this.pedidos.id)
                 Swal.fire({
                     title: 'Finalizado!',
                     text: 'O pedido foi finalizado com sucesso', 
@@ -76,6 +76,8 @@ export default {
                 
                 }).then((saveResult)=> {
                     if (saveResult.isConfirmed){
+                        axios
+                        .post('http://localhost:8080/deletaPedido/' + this.pedidos.id)
                         this.show = false
                     }
                 })

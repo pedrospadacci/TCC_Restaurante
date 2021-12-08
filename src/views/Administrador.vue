@@ -1,7 +1,6 @@
 <template>
         <div>
-            <mesas  :pedidos="item" v-for="item in pedido" :key="item.id"/>       
-            <p>{{ pedido }}         </p>
+            <mesas  :pedidos="item" v-for="item in pedido" :key="item.id"/>
         </div>
 </template>
 
