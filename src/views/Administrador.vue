@@ -1,6 +1,6 @@
 <template>
         <div>
-            <mesas  :mesas="item" v-for="item in pedido" :key="item.id" />       
+            <mesas  :pedidos="item" v-for="item in pedido" :key="item.id"/>       
             <p>{{ pedido }}         </p>
         </div>
 </template>
@@ -19,7 +19,7 @@ export default {
     data: () => {
         return {
             pedido: []
-            
+        
         }
 
     },
@@ -30,8 +30,8 @@ export default {
     methods: {
         load: function(){
             axios
-            .get('http://localhost:8080/listarPP')
-            .then(response => (this.pedido = response.data))
+            .get('http://localhost:8080/listarPedido')
+            .then((response) => (this.pedido = response.data))
         }
 
     }

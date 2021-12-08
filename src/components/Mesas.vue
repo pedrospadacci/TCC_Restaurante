@@ -4,25 +4,30 @@
                 <v-card class="mx-auto" width="500" >
 
                 <v-card-title class="teal lighten-3">
-                    <span class="text-h6 font-weight-light">{{ mesas.mesa.nome }}
+                    <span class="text-h6 font-weight-light">{{ pedidos.mesa.nome }}
                     </span>
                     </v-card-title>
 
                 <v-divider></v-divider>  
 
-                <v-timeline align-top dense>
-                    <v-timeline-item small>
-                        <div>
+                <v-timeline 
+                v-for="lista in lista" 
+                    v-bind:key="lista.id"
+                align-top dense>
+                    <v-timeline-item 
+                    v-if="lista.pedido.id == pedidos.id"
+                    small>
+                        <div >
                             <div class="font-weight-normal">
-                                <strong>{{ mesas.mesa.nome }}</strong>
+                                <strong>{{ lista.produto.descricao }}</strong>
                             </div>
-                            <div>{{ mesas.produto.descrocao }}</div>
+                            <div>{{ lista.quantidade }}</div>
                         </div>
                     </v-timeline-item>
                 </v-timeline>
                 <v-divider/>
 
-                <v-card-text class="text-h6">R${{ mesas.pedido.conta}} </v-card-text>
+                <v-card-text class="text-h6">R${{ pedidos.conta}} </v-card-text>
 
                 <v-card-actions>
                     <v-btn color="error" @click="fechaConta">Fecha Conta</v-btn>
@@ -39,13 +44,17 @@ export default {
     name: 'Mesas',
 
     props: {
-        mesas: {type: Object[Array], required: true},
+        pedidos: {type: Object[Array], required: true},
+        lista: []
     },
     data: () => {
         return {
             show: true
         }
 
+    },
+    mounted:function(){
+        this.listaPedidos()
     },
     methods: {
         fechaConta: function(){
@@ -74,6 +83,11 @@ export default {
                 Swal.fire('O pedido não foi excluido', '', 'info')
             }
             })
+        },
+        listaPedidos: function(){
+            axios
+                .post('http://localhost:8080/listarPP')
+                .then((response) => (this.lista = response.data))
         }
     }
 
