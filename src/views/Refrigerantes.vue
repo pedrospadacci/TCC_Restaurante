@@ -15,7 +15,7 @@ export default {
         },
         methods: {
             load: function() {
-                axios.get('http://localhost:8080/Produto/filter/' + "Refrigerante")
+                axios.get('http://localhost:8080/Produto/filter/Refrigerante')
                 .then(response => (this.produtos = response.data))
                 
             },
