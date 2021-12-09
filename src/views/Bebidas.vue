@@ -1,9 +1,11 @@
 <template>
 <div>
   <v-card
+    to="/refrigerantes"
     :loading="loading"
     class="mx-auto my-12"
     max-width="374"
+    @click ="refri"
   >
     <template slot="progress">
       <v-progress-linear
@@ -88,6 +90,15 @@
       loading: false,
       selection: 1,
     }),
+    methods: {
+      refri() {
+        this.$store.dispatch("setFiltro", "Refrigerante");
+      }
+    },
+    computed: {
+      
+      }
+    
     
   }
 </script>

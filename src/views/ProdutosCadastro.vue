@@ -68,8 +68,7 @@ export default {
           valor: null
       },
       descricaoRegra: [
-        v => !!v || 'Descrição é requerido',
-        v => (v && v.length >= 5) || 'Precisa de no minimo 5 letras',
+        v => !!v || 'Descrição é requerido'
       ],
       precoRegra: [
         v => !!v || 'Preço é requerido',
