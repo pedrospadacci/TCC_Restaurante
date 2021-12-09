@@ -10,11 +10,7 @@ const routes = [
     name: 'Bebidas',
     component: () => import(/* webpackChunkName: "bebidas" */ '../views/Bebidas.vue')
   },
-  {
-    path: '/pizzas',
-    name: 'Pizzas',
-    component: () => import(/* webpackChunkName: "pizzas" */ '../views/Pizzas.vue')
-  },
+  
 {
   path: '/entradas',
   name: 'Entradas',
@@ -44,6 +40,11 @@ const routes = [
   path: '/refrigerantes',
   name: 'Refrigerantes',
   component: () => import(/* webpackChunkName: "administrador" */ '../views/Refrigerantes.vue')
+},
+{
+  path: '/pizzas',
+  name: 'Pizzas',
+  component: () => import(/* webpackChunkName: "administrador" */ '../views/PizzasSalgadas.vue')
 }
 
 

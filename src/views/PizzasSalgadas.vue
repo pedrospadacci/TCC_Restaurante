@@ -1,10 +1,11 @@
 <template>
     <div>
-        <produtos :produtos="item" v-for="item in produto" :key="item.id"/>
+        <produtos :produtos="item" v-for="item in produtos" :key="item.id"/>        
     </div>  
 </template>
 
 <script>
+const axios = require('axios').default;
 import produtos from '../components/Produtos.vue'
 export default {
   components: { produtos },
@@ -13,7 +14,7 @@ export default {
         },
         methods: {
             load: function() {
-                axios.get('cardapiotcc-backend.herokuapp.com/listarProduto')
+                axios.get('http://localhost:8080/Produto/filter/Pizza')
                 .then(response => (this.produtos = response.data))
                 
             }

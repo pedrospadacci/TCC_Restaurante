@@ -82,7 +82,7 @@
       items: [
           { title: 'Início', to: '/'},
           { title: 'Bebidas', to: '/bebidas'},
-          { title: 'Entradas', to:'/entradas' },
+          //{ title: 'Entradas', to:'/entradas' },
           { title: 'Pizzas', to:'/pizzas' },          
         ],
         login:{ title:'Administrador', to:'/login'},
