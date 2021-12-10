@@ -39,7 +39,7 @@
     
   </v-card>
 
-  <v-card to="/entradas"
+  <v-card
     id="entradas"
     :loading="loading"
     class="mx-auto my-12"
