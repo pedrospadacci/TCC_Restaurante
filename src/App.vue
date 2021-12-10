@@ -81,9 +81,9 @@
     data: () => ({ drawer: null,
       items: [
           { title: 'Início', to: '/'},
-          { title: 'Bebidas', to: '/bebidas'},
+          { title: 'Bebidas', to: 'Bebidas'},
           //{ title: 'Entradas', to:'/entradas' },
-          { title: 'Pizzas', to:'/pizzas' },          
+          { title: 'Pizzas', to:'Pizzas' },          
         ],
         login:{ title:'Administrador', to:'/login'},
         model: 1,

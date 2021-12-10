@@ -44,13 +44,19 @@ const routes = [
 {
   path: '/pizzas',
   name: 'Pizzas',
-  component: () => import(/* webpackChunkName: "administrador" */ '../views/PizzasSalgadas.vue')
+  component: () => import(/* webpackChunkName: "Pizzas" */ '../views/Pizzas.vue')
+},
+{
+  path: '/pizzasSalgadas',
+  name: 'PizzasSalgadas',
+  component: () => import(/* webpackChunkName: "Pizzas" */ '../views/PizzasSalgadas.vue')
 }
 
 
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

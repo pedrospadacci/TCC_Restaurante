@@ -22,6 +22,7 @@
                 
                 <v-card-actions>
                     <v-select
+                    label="Selecione a mesa"
                     v-model="mesa"
                     :items="mesas"
                     item-text="nome"
@@ -32,6 +33,7 @@
                     required
                     ></v-select>
                     <v-text-field
+                    label="Quantidade"
                     type="number"
                     v-model="produto.quantidade"
                     required
@@ -41,11 +43,7 @@
 
                 
                 </v-card-text>
-                
 
-               
-                
-                
                 
                 </v-card>
             </v-col>
