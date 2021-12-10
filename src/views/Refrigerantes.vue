@@ -7,6 +7,7 @@
 <script>
 const axios = require('axios').default;
 import produtos from '../components/Produtos.vue'
+import{ mapState } from 'vuex'
 export default {
   components: { produtos },
     mounted:function(){
@@ -14,17 +15,25 @@ export default {
         },
         methods: {
             load: function() {
-                axios.get('http://localhost:8080/listarProduto')
+                axios.get('http://localhost:8080/Produto/filter/Refrigerante')
                 .then(response => (this.produtos = response.data))
                 
-            }
+            },
+
         },
         data: () => {
             return{
-                produtos:[]
-            }
+                produtos:[],
                 
+                
+            }            
     },
+        computed: {
+            ...mapState({
+                filtro: state => state.filtro
+            })
+        }
+
 }
 
 </script>
