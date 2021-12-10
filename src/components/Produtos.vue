@@ -11,21 +11,39 @@
                 
                 </template>                
 
-                <v-card-title>{{ produtos.descricao }}</v-card-title>
-
-                <v-card-text>
-                <v-row
-                    align="center"
-                    class="mx-0"
-                >        
-                </v-row>
-
+                <v-card-title>
+                    <span class="text-h6 font-weight-heavy">{{ produtos.descricao }}
+                    </span> 
+                    </v-card-title> 
+                <v-divider></v-divider> 
+                <v-card-text class="text-h6">
+                        <strong>R${{ produtos.valor }}</strong>
                 
+                
+                <v-card-actions>
+                    <v-select
+                    v-model="mesa"
+                    :items="mesas"
+                    item-text="nome"
+                    item-value="id"
+                    :rules="[v => !!v || 'Item is required']"
+                    @input ="buscaPedido"
+                    
+                    required
+                    ></v-select>
+                    <v-text-field
+                    type="number"
+                    v-model="produto.quantidade"
+                    required
+                    ></v-text-field>
+                    <v-btn color="success" @click="pedir">Pedir</v-btn>
+                </v-card-actions>
 
                 
                 </v-card-text>
+                
 
-                <v-divider class="mx-4"></v-divider>  
+               
                 
                 
                 
@@ -36,13 +54,63 @@
 </template>
 
 <script>
+const axios = require('axios').default;
+const Swal = require('sweetalert2');
 export default {
     name: 'Produtos',
 
     props: {
         produtos: {type: Object[Array], required: true}
+    },
+
+    data: () => ({
+        mesas:[],
+        pedido: [],
+      produto: {
+          quantidade: '',
+          produto: {id: ''},
+          pedido: {id: ''}
+        },
+        mesa: null,
+        
+      }),
+    methods: {
+        pedir: function(){
+            this.produto.produto.id = this.produtos.id
+            this.produto.pedido.id = this.pedido.id
+            axios
+                .post('http://localhost:8080/cadastrarPP', this.produto )
+                Swal.fire({
+                    title: 'Pedido feito!',
+                    text: 'Seu pedido chegara em um momento', 
+                    icon: 'success',
+                
+                }).then((saveResult)=> {
+                    if (saveResult.isConfirmed){
+                        
+                    }
+                })
+            
+                
+        },
+        buscaPedido: function(){
+            axios
+                .get('http://localhost:8080/listarPedido/'+ this.mesa)
+                .then((response) => (this.pedido = response.data))
+                
+                
+        },
+        listaMesa: function(){
+            axios
+                .post('http://localhost:8080/listarMesa')
+                .then((response) => (this.mesas = response.data))
+        }
+        },
+        mounted: function(){
+            this.listaMesa()
+        }
     }
-}
+
 </script>
 
 <style>

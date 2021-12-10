@@ -82,7 +82,7 @@ export default {
                 .post('http://localhost:8080/cadastrarProduto', this.produto)
                 Swal.fire({
                     title: 'Salvo!',
-                    text: 'Seu roduto foi salvo com sucesso', 
+                    text: 'Seu produto foi salvo com sucesso', 
                     icon: 'success',
                 
                 }).then((saveResult)=> {
