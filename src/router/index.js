@@ -5,11 +5,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Inicio',
-    component: () => import(/* webpackChunkName: "inicio" */ '../views/Inicio.vue'),
-  },
+
   {
     path: '/bebidas',
     name: 'Bebidas',
@@ -50,6 +46,11 @@ const routes = [
   path: '/pizzasSalgadas',
   name: 'PizzasSalgadas',
   component: () => import(/* webpackChunkName: "Pizzas" */ '../views/PizzasSalgadas.vue')
+},
+{
+  path: '/:mesa',
+  name: 'Inicio',
+  component: () => import(/* webpackChunkName: "inicio" */ '../views/Inicio.vue')
 }
 
 

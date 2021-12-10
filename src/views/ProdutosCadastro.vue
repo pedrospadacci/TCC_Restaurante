@@ -52,6 +52,7 @@
             
         </v-col>
       </v-row>
+      <produtos :produtos="item" v-for="item in produtos" :key="item.id"/>
   </div>
 </template>
 
@@ -59,7 +60,9 @@
 const axios = require('axios').default;
 const Swal = require('sweetalert2');
 const router = require('vue-router');
+import produtos from '../components/ListaP.vue'
 export default {
+  components:{produtos},
     data: () => ({
       items: ['Refrigerante', 'Bebida Alcolica', 'Pizza', 'Entrada'],
       produto: {
@@ -67,6 +70,7 @@ export default {
           tipo: null,
           valor: null
       },
+      produtos:[],
       descricaoRegra: [
         v => !!v || 'Descrição é requerido'
       ],
@@ -87,12 +91,20 @@ export default {
                 
                 }).then((saveResult)=> {
                     if (saveResult.isConfirmed){
-                        
+                        this.load()
                     }
                 })
             }
-    }
-}
+    },
+        load: function() {
+                    axios.get('http://localhost:8080/listarProduto')
+                    .then(response => (this.produtos = response.data))
+                    
+                }
+},
+    mounted:function(){
+                this.load()
+            },
 }
 </script>
 

@@ -1,5 +1,7 @@
 <template>
 <div>
+  
+  
   <v-card
     to="/refrigerantes"
     :loading="loading"
@@ -80,7 +82,7 @@
 
   
 
-  
+ 
 </div>
 </template>
 

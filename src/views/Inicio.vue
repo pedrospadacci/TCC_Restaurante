@@ -1,6 +1,7 @@
 <template>
 <div>
-  <v-card to="/bebidas"
+  
+  <v-card to="bebidas"
     id="bebidas"
     :loading="loading"
     class="mx-auto my-12"
@@ -78,7 +79,9 @@
     
   </v-card>
 
-  <v-card id="entradas"
+  <v-card
+    to="PizzasSalgadas"
+    id="entradas"
     :loading="loading"
     class="mx-auto my-12"
     max-width="274"
@@ -129,12 +132,26 @@
 
 </style>
 <script>
+import axios from 'axios'
   export default {
     data: () => ({
       produto: [],
       loading: false,
       selection: 1,
+      pedidoOut:{
+        conta: "0"
+      }
     }),
+    methods: {
+      pedido: function(){
+        axios
+            .post('http://localhost:8080/cadastrarPedido/' + this.$route.params.mesa, this.pedidoOut)
+        
+      }
+    },
+        mounted: function(){
+            this.pedido()
+        }
 
     
   }
