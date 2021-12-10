@@ -6,6 +6,11 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/',
+    name: 'Inicio',
+    component: () => import(/* webpackChunkName: "inicio" */ '../views/Inicio.vue'),
+  },
+  {
     path: '/bebidas',
     name: 'Bebidas',
     component: () => import(/* webpackChunkName: "bebidas" */ '../views/Bebidas.vue')
@@ -16,11 +21,6 @@ const routes = [
   name: 'Entradas',
   component: () => import(/* webpackChunkName: "entradas"  '../views/Entradas.vue')
 },*/
-  {
-    path: '/',
-    name: 'Inicio',
-    component: () => import(/* webpackChunkName: "inicio" */ '../views/Inicio.vue')
-  },
 {
   path: '/administrador',
   name: 'Administrador',
