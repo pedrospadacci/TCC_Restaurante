@@ -30,7 +30,7 @@ export default {
     methods: {
         load: function(){
             axios
-            .get('http://localhost:8080/listarPedido')
+            .get('https://cardapiotcc-backend.herokuapp.com/listarPedido')
             .then((response) => (this.pedido = response.data))
         }
 

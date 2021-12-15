@@ -14,7 +14,7 @@ export default {
         },
         methods: {
             load: function() {
-                axios.get('http://localhost:8080/Produto/filter/Pizza')
+                axios.get('https://cardapiotcc-backend.herokuapp.com/Produto/filter/Pizza')
                 .then(response => (this.produtos = response.data))
                 
             }

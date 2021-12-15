@@ -68,7 +68,7 @@ export default {
             }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                .post('http://localhost:8080/deletaPP/' + this.pedidos.id)
+                .post('https://cardapiotcc-backend.herokuapp.com/deletaPP/' + this.pedidos.id)
                 Swal.fire({
                     title: 'Finalizado!',
                     text: 'O pedido foi finalizado com sucesso', 
@@ -77,7 +77,7 @@ export default {
                 }).then((saveResult)=> {
                     if (saveResult.isConfirmed){
                         axios
-                        .post('http://localhost:8080/deletaPedido/' + this.pedidos.id)
+                        .post('https://cardapiotcc-backend.herokuapp.com/deletaPedido/' + this.pedidos.id)
                         this.show = false
                     }
                 })
@@ -88,7 +88,7 @@ export default {
         },
         listaPedidos: function(){
             axios
-                .post('http://localhost:8080/listarPP')
+                .post('https://cardapiotcc-backend.herokuapp.com/listarPP')
                 .then((response) => (this.lista = response.data))
         }
     }

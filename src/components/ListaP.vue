@@ -62,7 +62,7 @@ export default {
             }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                .post('http://localhost:8080/deletaProduto/' + this.produtos.id)
+                .post('https://cardapiotcc-backend.herokuapp.com/deletaProduto/' + this.produtos.id)
                 Swal.fire({
                     title: 'Finalizado!',
                     text: 'O pedido foi finalizado com sucesso', 

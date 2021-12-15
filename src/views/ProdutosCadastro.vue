@@ -83,7 +83,7 @@ export default {
         save: function() {
             if(this.produto.descricao != null && this.produto.tipo != null && this.produto.valor != null){
                 axios
-                .post('http://localhost:8080/cadastrarProduto', this.produto)
+                .post('https://cardapiotcc-backend.herokuapp.com/cadastrarProduto', this.produto)
                 Swal.fire({
                     title: 'Salvo!',
                     text: 'Seu produto foi salvo com sucesso', 
@@ -97,7 +97,7 @@ export default {
             }
     },
         load: function() {
-                    axios.get('http://localhost:8080/listarProduto')
+                    axios.get('https://cardapiotcc-backend.herokuapp.com/listarProduto')
                     .then(response => (this.produtos = response.data))
                     
                 }

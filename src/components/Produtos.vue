@@ -77,7 +77,7 @@ export default {
             this.produto.produto.id = this.produtos.id
             this.produto.pedido.id = this.pedido.id
             axios
-                .post('http://localhost:8080/cadastrarPP', this.produto )
+                .post('https://cardapiotcc-backend.herokuapp.com/cadastrarPP', this.produto )
                 Swal.fire({
                     title: 'Pedido feito!',
                     text: 'Seu pedido chegara em um momento', 
@@ -93,14 +93,14 @@ export default {
         },
         buscaPedido: function(){
             axios
-                .get('http://localhost:8080/listarPedido/'+ this.mesa)
+                .get('https://cardapiotcc-backend.herokuapp.com/listarPedido/'+ this.mesa)
                 .then((response) => (this.pedido = response.data))
                 
                 
         },
         listaMesa: function(){
             axios
-                .post('http://localhost:8080/listarMesa')
+                .post('https://cardapiotcc-backend.herokuapp.com/listarMesa')
                 .then((response) => (this.mesas = response.data))
         }
         },
