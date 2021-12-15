@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
     "postinstall": "npm run build",
     "start": "node server.js",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run dev"
@@ -32,10 +33,11 @@
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.7.0"
   },
+  "eslintConfig": {
+      "root": true,
+      "env": {
+        "node": true
+      }
   
-   
-    "engines": {
-      "node": "16.x"
-    }
-  
+}
 }
