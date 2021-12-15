@@ -19,7 +19,7 @@
 
     <v-img
       height="250"
-      src="..\..\Images\Sodas.png"
+      src="Images\Sodas.png"
     ></v-img>
 
     <v-card-title>Refrigerantes</v-card-title>
@@ -57,7 +57,7 @@
 
     <v-img
       height="250"
-      src="..\..\Images\Drinks.png"
+      src="Images\Drinks.png"
     ></v-img>
 
     <v-card-title>Drinks</v-card-title>

@@ -15,7 +15,7 @@
 
     <v-img
       height="250"
-      src="..\..\Images\Petiscos.png"
+      src="Images\Petiscos.png"
     ></v-img>
 
     <v-card-title>Entradas</v-card-title>

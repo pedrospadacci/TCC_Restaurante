@@ -16,7 +16,7 @@
 
     <v-img
       height="250"
-      src="..\..\Images\Pizzas salgadas.png"
+      src="Images\Pizzas salgadas.png"
     ></v-img>
 
     <v-card-title>Pizzas salgadas</v-card-title>
@@ -54,7 +54,7 @@
 
     <v-img
       height="250"
-      src="..\..\Images\Pizzas doces.png"
+      src="Images\Pizzas doces.png"
     ></v-img>
 
     <v-card-title>Pizzas Doces</v-card-title>

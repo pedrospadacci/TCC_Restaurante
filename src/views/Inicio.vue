@@ -17,7 +17,7 @@
 
     <v-img
       height="150"
-      src="..\..\Images\Sodas.png"
+      src="Images\Sodas.png"
     ></v-img>
 
     <v-card-title>Bebidas</v-card-title>
@@ -56,7 +56,7 @@
 
     <v-img
       height="150"
-      src="..\..\Images\Petiscos.png"
+      src="Images\Petiscos.png"
     ></v-img>
 
     <v-card-title>Entradas</v-card-title>
@@ -96,7 +96,7 @@
 
     <v-img
       height="150"
-      src="..\..\Images\Pizzas salgadas.png"
+      src="Images\Pizzas salgadas.png"
     ></v-img>
 
     <v-card-title>Pizzas</v-card-title>
