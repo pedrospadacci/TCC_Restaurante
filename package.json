@@ -53,5 +53,8 @@
       "parser": "babel-eslint"
     },
     "rules": {}
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
