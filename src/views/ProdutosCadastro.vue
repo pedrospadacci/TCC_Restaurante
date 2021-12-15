@@ -59,7 +59,7 @@
 <script>
 const axios = require('axios').default;
 const Swal = require('sweetalert2');
-const router = require('vue-router');
+
 import produtos from '../components/ListaP.vue'
 export default {
   components:{produtos},
