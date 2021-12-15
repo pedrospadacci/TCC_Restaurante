@@ -4,12 +4,16 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "postinstall": "npm run build",
+    "start": "node server.js",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run dev"
   },
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
+    "express": "^4.17.1",
     "sweetalert2": "^11.3.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
