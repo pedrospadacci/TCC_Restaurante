@@ -51,12 +51,7 @@ const routes = [
   path: '/:mesa',
   name: 'Inicio',
   component: () => import(/* webpackChunkName: "inicio" */ '../views/Inicio.vue')
-},
-{
-  path: '*',
-  name: '404',
-  component: require('../views/Inicio.vue'),
-},
+}
 
 
 ]
