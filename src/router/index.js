@@ -49,7 +49,6 @@ const routes = [
 },
 {
   path: '/:mesa',
-  redirect: '/',
   name: 'Inicio',
   component: () => import(/* webpackChunkName: "inicio" */ '../views/Inicio.vue')
 }
