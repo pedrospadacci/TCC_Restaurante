@@ -13,7 +13,10 @@ const staticFileMiddleware = express.static(path.join(__dirname, 'dist'))
 
 app.use(staticFileMiddleware)
 app.use(cors())
-app.use(history());
+app.use(history({
+    disableDotRule: true,
+    verbose: true
+  }));
 
 app.get('/', function (req, res) {
     res.render(path.join(__dirname + '/src/main.js'))
