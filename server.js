@@ -3,7 +3,7 @@
 const express = require('express')
 const path    = require('path')
 const cors = require("cors")
-var history = require('connect-history-api-fallback');
+
 
 
 const app = express()
@@ -13,12 +13,9 @@ const staticFileMiddleware = express.static(path.join(__dirname, 'dist'))
 
 app.use(staticFileMiddleware)
 app.use(cors())
-app.use(history({
-    disableDotRule: true,
-    verbose: true
-  }));
 
-app.get('/', function (req, res) {
+
+app.get('/:mesa', function (req, res) {
     res.render(path.join(__dirname + '/src/main.js'))
 })
 
